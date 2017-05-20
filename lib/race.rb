@@ -1,11 +1,5 @@
-module RaceBet
-  class Race
-
-    class << self
-      def score(guesses, winners)
-
-      end
-    end
+class Race
+  def self.score(guesses, winners)
 
   end
 end

@@ -2,12 +2,12 @@
 
 Fork this repo and email us when everything is green. Feel free to commit often, we would love to see how you tackle this and not just the final result.
 
-Fill in the `score` routine in the `RaceBet::Race` class which accepts two arguments:
+Fill in the `score` routine in the `Race` class which accepts two arguments:
 
 * an `Array` of guesses, for example `[:bob, :mark, :walter]` which models a prediction that Bob will have finished first, Mark second and Walter third
 * an `Array` of actual winners, for example `[:mark, :bob, :walter]`
 
-In this example the scoring function must calculate `7` points, according to following rules:
+In this example the final score is calculated using the following `6` rules:
 * correct first place guess - 15 points
 * correct second place guess - 10 points
 * correct third place guess - 5 points

@@ -1,7 +1,7 @@
 require 'spec_helper'
 require_relative '../lib/race'
 
-describe RaceBet::Race do
+describe Race do
 
   let(:guesses) { [:joe, :mary, :bob, :sheldon, :howard, :frank] }
 
