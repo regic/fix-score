@@ -5,10 +5,10 @@ class Race
   def self.score(guesses, winners)
     points = 0
 
-    guesses.first(POINTS.length).each_with_index do |guess, index|
-      if guess == winners.at(index)
+    guesses.first(POINTS.length).each_index do |index|
+      if guesses.at(index) == winners.at(index)
         points += POINTS.at(index)
-      elsif winners.include? guess
+      elsif winners.include? guesses.at(index)
         points += BONUS
       end
     end
