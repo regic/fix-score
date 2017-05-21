@@ -4,13 +4,7 @@ class Race
 
   def self.score(guesses, winners)
     POINTS.zip(guesses, winners).inject(0) do |memo, (points, guess, winner)|
-      memo + if guess == winner && (guess || winner)
-        points
-      elsif winners.include? guess
-        BONUS
-      else
-        0
-      end
+      memo + (guess == winner && (guess || winner) ? points : (BONUS if winners.include? guess).to_i)
     end
   end
 end
