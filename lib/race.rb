@@ -3,17 +3,15 @@ class Race
   BONUS = 1
 
   def self.score(guesses, winners)
-    points = 0
-
-    POINTS.zip(guesses, winners) do |score, guess, winner|
-      if guess == winner && (guess || winner)
-        points += score
+    POINTS.zip(guesses, winners).inject(0) do |memo, (points, guess, winner)|
+      memo + if guess == winner && (guess || winner)
+        points
       elsif winners.include? guess
-        points += BONUS
+        BONUS
+      else
+        0
       end
     end
-
-    points
   end
 end
 
