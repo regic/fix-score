@@ -3,8 +3,10 @@ class Race
   BONUS = 1
 
   def self.score(guesses, winners)
-    POINTS.zip(guesses, winners).inject(0) do |memo, (points, guess, winner)|
-      memo + (guess == winner && (guess || winner) ? points : (BONUS if winners.include? guess).to_i)
+    max_iterations = [guesses, winners, POINTS].map(&:length).min
+
+    POINTS.first(max_iterations).zip(guesses, winners).inject(0) do |memo, (points, guess, winner)|
+      memo + (guess == winner ? points : (BONUS if winners.include? guess).to_i)
     end
   end
 end
